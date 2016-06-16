@@ -1,0 +1,925 @@
+    <report format_id="a994b278-1f62-11e1-96ac-406186ea4fc5" extension="xml" type="scan" id="b64f6de2-3b7e-43bd-9e79-2136ed2f6b7f" content_type="text/xml">
+        <report id="b64f6de2-3b7e-43bd-9e79-2136ed2f6b7f">
+            <report_format/>
+            <sort>
+                <field>threat<order>descending</order>
+                </field>
+            </sort>
+            <filters>hmlgf<phrase/>
+                <notes>1</notes>
+                <overrides>1</overrides>
+                <apply_overrides>1</apply_overrides>
+                <result_hosts_only>1</result_hosts_only>
+                <min_cvss_base>0</min_cvss_base>
+                <filter>High</filter>
+                <filter>Medium</filter>
+                <filter>Low</filter>
+                <filter>Log</filter>
+                <filter>False Positive</filter>
+            </filters>
+            <scan_run_status>Done</scan_run_status>
+            <task id="b9c9a046-3f07-4885-8d09-d0605f4000e5">
+                <name>192.168.1.7</name>
+                <target id="a051d6d5-dcb7-4ded-a2d4-8e60130072f4">
+                    <trash>0</trash>
+                </target>
+            </task>
+            <scan_start>2013-04-23T18:37:32Z</scan_start>
+            <ports max="-1" start="1">
+                <port>microsoft-ds (445/tcp)<host>192.168.1.7</host>
+                    <threat>High</threat>
+                </port>
+                <port>general/SMBClient<host>192.168.1.7</host>
+                    <threat>Low</threat>
+                </port>
+                <port>general/tcp<host>192.168.1.7</host>
+                    <threat>Low</threat>
+                </port>
+                <port>icslap (2869/tcp)<host>192.168.1.7</host>
+                    <threat>Low</threat>
+                </port>
+                <port>ntp (123/udp)<host>192.168.1.7</host>
+                    <threat>Low</threat>
+                </port>
+                <port>general/CPE-T<host>192.168.1.7</host>
+                    <threat>Log</threat>
+                </port>
+                <port>general/HOST-T<host>192.168.1.7</host>
+                    <threat>Log</threat>
+                </port>
+                <port>general/icmp<host>192.168.1.7</host>
+                    <threat>Log</threat>
+                </port>
+                <port>netbios-ns (137/udp)<host>192.168.1.7</host>
+                    <threat>Log</threat>
+                </port>
+                <port>netbios-ssn (139/tcp)<host>192.168.1.7</host>
+                    <threat>Log</threat>
+                </port>
+            </ports>
+            <results max="-1" start="1">
+                <result id="38bb956b-7318-40ce-8153-73c0d6010f58">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>microsoft-ds (445/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.900233">
+                        <name>Vulnerabilities in SMB Could Allow Remote Code Execution (958687) - Remote</name>
+                        <cvss_base>10.0</cvss_base>
+                        <risk_factor>Critical</risk_factor>
+                        <cve>CVE-2008-4114, CVE-2008-4834, CVE-2008-4835</cve>
+                        <bid>31179</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>High</threat>
+                    <description>
+
+  Overview: This host is missing a critical security update according to
+  Microsoft Bulletin MS09-001.
+
+  Vulnerability Insight:
+  The issue is due to the way Server Message Block (SMB) Protocol software
+  handles specially crafted SMB packets.
+
+  Impact: Successful exploitation could allow remote unauthenticated attackers
+  to cause denying the service by sending a specially crafted network message
+  to a system running the server service.
+
+  Impact Level: System/Network
+
+  Affected Software/OS:
+  Microsoft Windows 2K Service Pack 4 and prior.
+  Microsoft Windows XP Service Pack 3 and prior.
+  Microsoft Windows 2003 Service Pack 2 and prior.
+
+  Fix: Run Windows Update and update the listed hotfixes or download and
+  update mentioned hotfixes in the advisory from the below link,
+  http://www.microsoft.com/technet/security/bulletin/ms09-001.mspx
+
+  References:
+  http://www.milw0rm.com/exploits/6463
+  http://www.microsoft.com/technet/security/bulletin/ms09-001.mspx
+  
+</description>
+                    <original_threat>High</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="72e1baf2-6da2-4994-aaff-981e5b621c3d">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>microsoft-ds (445/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.902269">
+                        <name>Microsoft Windows SMB Server NTLM Multiple Vulnerabilities (971468)</name>
+                        <cvss_base>10.0</cvss_base>
+                        <risk_factor>Critical</risk_factor>
+                        <cve>CVE-2010-0020, CVE-2010-0021, CVE-2010-0022, CVE-2010-0231</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>High</threat>
+                    <description>
+  Overview: This host is missing a critical security update according to
+  Microsoft Bulletin MS10-012.
+
+  Vulnerability Insight:
+  - An input validation error exists while processing SMB requests and can
+    be exploited to cause a buffer overflow via a specially crafted SMB packet.
+  - An error exists in the SMB implementation while parsing SMB packets during
+    the Negotiate phase causing memory corruption via a specially crafted SMB
+    packet.
+  - NULL pointer dereference error exists in SMB while verifying the 'share'
+    and 'servername' fields in SMB packets causing denial of service.
+  - A lack of cryptographic entropy when the SMB server generates challenges
+    during SMB NTLM authentication and can be exploited to bypass the
+    authentication mechanism.
+
+  Impact:
+  Successful exploitation will allow remote attackers to execute arbitrary
+  code or cause a denial of service or bypass the authentication mechanism
+  via brute force technique.
+
+  Impact Level: System/Application
+
+  Affected Software/OS:
+  Microsoft Windows 7
+  Microsoft Windows 2000 Service Pack and prior
+  Microsoft Windows XP Service Pack 3 and prior
+  Microsoft Windows Vista Service Pack 2 and prior
+  Microsoft Windows Server 2003 Service Pack 2 and prior
+  Microsoft Windows Server 2008 Service Pack 2 and prior
+
+  Fix:
+  Run Windows Update and update the listed hotfixes or download and
+  update mentioned hotfixes in the advisory from the below link,
+  http://www.microsoft.com/technet/security/bulletin/ms10-012.mspx
+
+  References:
+  http://secunia.com/advisories/38510/
+  http://support.microsoft.com/kb/971468
+  http://www.vupen.com/english/advisories/2010/0345
+  http://www.microsoft.com/technet/security/bulletin/ms10-012.mspx 
+</description>
+                    <original_threat>High</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="ff3cc7a7-d15d-427b-8c9a-5d530c17f110">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/SMBClient</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.90011">
+                        <name>SMB Test</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>OS Version = WINDOWS 5.1
+Domain = WORKGROUP
+SMB Serverversion = WINDOWS 2000 LAN MANAGER
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="32d29790-1727-4eb5-a723-54aca8c71d5f">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/SMBClient</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.90011">
+                        <name>SMB Test</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>OS Version = WINDOWS 5.1
+Domain = WORKGROUP
+SMB Serverversion = Windows 2000 LAN Manager
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="d37bb872-f82a-4196-aa14-34959e256461">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/SMBClient</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.90011">
+                        <name>SMB Test</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>OS Version = Windows 5.1
+Domain = WORKGROUP
+SMB Serverversion = WINDOWS 2000 LAN MANAGER
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="64ac757b-adfa-41fd-9cb1-2c7b642aedb4">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/SMBClient</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.90011">
+                        <name>SMB Test</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>OS Version = Windows 5.1
+Domain = WORKGROUP
+SMB Serverversion = Windows 2000 LAN Manager
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="09b5067b-3a96-4acd-b230-d8a21c6ea451">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.80091">
+                        <name>TCP timestamps</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>
+Synopsis :
+
+The remote service implements TCP timestamps.
+
+Description :
+
+The remote host implements TCP timestamps, as defined by RFC1323.
+A side effect of this feature is that the uptime of the remote 
+host can sometimes be computed.
+
+See also :
+
+http://www.ietf.org/rfc/rfc1323.txt
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="0300e028-eac0-4266-975b-d9286f2436c1">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>icslap (2869/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.14259">
+                        <name>Nmap (NASL wrapper)</name>
+                        <cvss_base>7.5</cvss_base>
+                        <risk_factor>High</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>Nmap has identified this service as  Ignored State: closed (4477)
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="ce7d1cf2-4452-4269-a176-d9d07c379101">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>icslap (2869/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.10107">
+                        <name>HTTP Server type and version</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>The remote web server type is :
+
+Microsoft-HTTPAPI/1.0 
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="a7ab0b87-673f-43a9-8b0b-f61052251d41">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>icslap (2869/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.14260">
+                        <name>Nikto (NASL wrapper)</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>Here is the Nikto report:
+- Nikto v2.1.4
+---------------------------------------------------------------------------
++ Target IP:          192.168.1.7
++ Target Hostname:    192.168.1.7
++ Target Port:        2869
++ Start Time:         2013-04-24 18:41:51
+---------------------------------------------------------------------------
++ Server: Microsoft-HTTPAPI/1.0
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ Microsoft-HTTPAPI/1.0 appears to be outdated (current is at least 2.0)
++ 6448 items checked: 0 error(s) and 1 item(s) reported on remote host
++ End Time:           2013-04-24 18:42:09 (18 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="82148f0d-09f3-45f9-a302-6a585d052961">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>ntp (123/udp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.10884">
+                        <name>NTP read variables</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Low</threat>
+                    <description>
+  A NTP (Network Time Protocol) server is listening on this port.
+</description>
+                    <original_threat>Low</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="0a0acb0f-1d01-4dae-8c45-4cfa62de8517">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/CPE-T</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.810002">
+                        <name>CPE Inventory</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>192.168.1.7|cpe:/o:microsoft:windows
+
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="bd67932e-d3ea-4738-905a-c4e667ae1cc0">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/HOST-T</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.810003">
+                        <name>Host Summary</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>traceroute:192.168.1.9,192.168.1.7
+TCP ports:445,2869,135,139
+UDP ports:
+
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="3187a325-f868-433d-95b1-1b556031cbfc">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/icmp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.103190">
+                        <name>ICMP Timestamp Detection</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>CVE-1999-0524</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>Overview:
+The remote host responded to an ICMP timestamp request. The Timestamp Reply is
+an ICMP message which replies to a Timestamp message. It consists of the
+originating timestamp sent by the sender of the Timestamp as well as a receive
+timestamp and a transmit timestamp. This information could theoretically be used
+to exploit weak time-based random number generators in other services.
+
+See also:
+http://www.ietf.org/rfc/rfc0792.txt
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="4f08460d-e2f0-4130-8e98-d0e6ad160870">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.102002">
+                        <name>OS fingerprinting</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>ICMP based OS fingerprint results: (100% confidence)
+
+Microsoft Windows
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="45d572c5-a835-4299-95d1-9bf554d621d8">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.103978">
+                        <name>Checks for open udp ports</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>Open UDP ports: [None found]
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="4bba8596-b23e-4559-a48b-af494932e1a5">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.110001">
+                        <name>arachni (NASL wrapper)</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>Arachni could not be found in your system path.
+OpenVAS was unable to execute Arachni and to perform the scan you
+requested.
+Please make sure that Arachni is installed and that arachni is
+available in the PATH variable defined for your environment.
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="40a9db42-7f24-4857-ba70-db05c7540bbc">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.19506">
+                        <name>Information about the scan</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>Information about this scan : 
+
+OpenVAS Scanner version : 5.0.4
+NVT feed version : 201303201028
+Type of NVT feed : OpenVAS NVT Feed
+Scanner IP : 192.168.1.9
+Port scanner(s) : nmap 
+Port range : T:1-5,7,9,11,13,15,17-25,27,29,31,33,35,37-39,41-59,61-224,242-248,256-268,280-287,308-322,333,344-700,702,704-707,709-711,721,723,729-731,740-742,744,747-754,758-765,767,769-777,780-783,786-787,799-801,808,810,828-829,847-848,860,871,873,886-888,898,900-904,911-913,927,950,953,975,989-1002,1005,1008,1010,1023-1027,1029-1036,1040,1042,1045,1047-1112,1114-1117,1119-1120,1122-1127,1139,1154-1155,1161-1162,1168-1170,1178,1180-1181,1183-1188,1194,1199-1231,1233-1286,1288-1774,1776-2028,2030,2032-2035,2037-2038,2040-2065,2067-2083,2086-2087,2089-2152,2155,2159-2167,2170-2177,2180-2181,2190-2191,2199-2202,2213,2220-2223,2232-2246,2248-2255,2260,2273,2279-2289,2294-2311,2313-2371,2381-2425,2427-2681,2683-2824,2826-2854,2856-2924,2926-3096,3098-3299,3302-3321,3326-3366,3372-3403,3405-3545,3547-3707,3709-3765,3767-3770,3772-3800,3802,3845-3871,3875-3876,3885,3900,3928-3929,3939,3959,3970-3971,3984-3987,3999-4036,4040-4042,4045,4080,4096-4100,4111,4114,4132-4134,4138,4141-4145,4154,4160,4199-4200,4242,4300,4321,4333,4343-4351,4353-4358,4369,4400,4442-4457,4480,4500,4545-4547,4555,4557,4559,4567-4568,4600-4601,4658-4662,4672,4752,4800-4802,4827,4837-4839,4848-4849,4868-4869,4885,4894,4899,4950,4983,4987-4989,4998,5000-5011,5020-5025,5031,5042,5050-5057,5060-5061,5064-5066,5069,5071,5081,5093,5099-5102,5137,5145,5150-5152,5154,5165,5190-5193,5200-5203,5222,5225-5226,5232,5236,5250-5251,5264-5265,5269,5272,5282,5300-5311,5314-5315,5351-5355,5400-5432,5435,5454-5456,5461-5463,5465,5500-5504,5510,5520-5521,5530,5540,5550,5553-5556,5566,5569,5595-5605,5631-5632,5666,5673-5680,5688,5690,5713-5717,5720,5729-5730,5741-5742,5745-5746,5755,5757,5766-5768,5771,5800-5803,5813,5858-5859,5882,5888-5889,5900-5903,5968-5969,5977-5979,5987-5991,5997-6010,6050-6051,6064-6073,6085,6100-6112,6123,6141-6150,6175-6177,6200,6253,6255,6270,6300,6321-6322,6343,6346-6347,6373,6382,6389,6400,6455-6456,6471,6500-6503,6505-6510,6543,6547-6550,6558,6566,6580-6582,6588,6620-6621,6623,6628,6631,6665-6670,6672-6673,6699-6701,6714,6767-6768,6776,6788-6790,6831,6841-6842,6850,6881-6889,6891,6901,6939,6961-6966,6969-6970,6998-7015,7020-7021,7030,7070,7099-7100,7121,7161,7170,7174,7200-7201,7210,7269,7273,7280-7281,7283,7300,7320,7326,7391-7392,7395,7426-7431,7437,7464,7491,7501,7510-7511,7544-7545,7560,7566,7570,7575,7588,7597,7624,7626-7627,7633-7634,7648-7649,7666,7674-7676,7743,7775-7779,7781,7786,7797-7798,7800-7801,7845-7846,7875,7902,7913,7932-7933,7967,7979-7980,7999-8005,8007-8010,8022,8032-8033,8044,8074,8080-8082,8088-8089,8098,8100,8115-8116,8118,8121-8122,8130-8132,8160-8161,8181-8194,8199-8201,8204-8208,8224-8225,8245,8311,8351,8376-8380,8400-8403,8416-8417,8431,8443-8444,8450,8473,8554-8555,8649,8733,8763-8765,8786-8787,8804,8863-8864,8875,8880,8888-8894,8900-8901,8910-8911,8954,8989,8999-9002,9006,9009,9020-9026,9080,9090-9091,9100-9103,9110-9111,9131,9152,9160-9164,9200-9207,9210-9211,9217,9281-9285,9287,9292,9321,9343-9344,9346,9374,9390,9396-9397,9400,9418,9495,9500,9535-9537,9593-9595,9600,9612,9704,9747,9753,9797,9800-9802,9872,9875-9876,9888-9889,9898-9901,9909,9911,9950-9952,9990-10005,10007-10008,10012,10080-10083,10101-10103,10113-10116,10128,10252,10260,10288,10607,10666,10752,10990,11000-11001,11111,11201,11223,11319-11321,11367,11371,11600,11720,11751,11965,11967,11999-12006,12076,12109,12168,12172,12223,12321,12345-12346,12361-12362,12468,12701,12753,13160,13223-13224,13701-13702,13705-13706,13708-13718,13720-13722,13724,13782-13783,13818-13822,14001,14033-14034,14141,14145,14149,14194,14237,14936-14937,15000,15126,15345,15363,16360-16361,16367-16368,16384,16660-16661,16959,16969,16991,17007,17185,17219,17300,17770-17772,18000,18181-18187,18190,18241,18463,18769,18888,19191,19194,19283,19315,19398,19410-19412,19540-19541,19638,19726,20000-20001,20005,20011-20012,20034,20200,20202-20203,20222,20670,20999-21000,21490,21544,21590,21800,21845-21849,22000-22001,22222,22273,22289,22305,22321,22370,22555,22800,22951,23456,24000-24006,24242,24249,24345-24347,24386,24554,24677-24678,24922,25000-25009,25378,25544,25793,25867,25901,25903,26000,26208,26260-26264,27000-27010,27345,27374,27504,27665,27999,28001,29559,29891,30001-30002,30100-30102,30303,30999,31337,31339,31416,31457,31554,31556,31620,31765,31785-31787,32261,32666,32768-32780,32786-32787,32896,33270,33331,33434,33911,34249,34324,34952,36865,37475,37651,38037,38201,38292-38293,39681,40412,40841-40843,41111,41508,41794-41795,42508-42510,43118,43188-43190,44321-44322,44333-44334,44442-44443,44818,45000,45054,45678,45966,47000,47557,47624,47806,47808,47891,48000-48003,48556,49400,50000-50004,50505,50776,51210,53001,54320-54321,57341,59595,60177,60179,61439-61441,61446,65000,65301
+Thorough tests : no
+Experimental tests : no
+Paranoia level : 1
+Report Verbosity : 1
+Safe checks : yes
+Max hosts : 30
+Max checks : 10
+Scan Start Date : 2013/4/23 18:38
+Scan duration : 371 sec
+
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="a7e7887e-6f63-458e-ae9c-8efd4582cc7d">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.51662">
+                        <name>Traceroute</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>Here is the route from 192.168.1.9 to 192.168.1.7:
+
+192.168.1.9
+192.168.1.7
+
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="c5524404-fef5-4b58-ac15-c847510763d3">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.802726">
+                        <name>Microsoft SMB Signing Disabled</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>SMB signing is disabled on this host
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="1962e92b-2008-47d2-bf88-95e0a7af8798">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.90022">
+                        <name>SSH Authorization Check</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>No port for an ssh connect was found open.
+Hence authenticated checks are not enabled.
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="fed97551-d4c6-4df1-9003-eebd8494aaaf">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>general/tcp</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.900239">
+                        <name>Checks for open tcp ports</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>Open TCP ports: 445, 2869, 135, 139
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="a6c51b63-d1f6-4260-8211-2d68bb2db125">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>icslap (2869/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.103079">
+                        <name>DIRB (NASL wrapper)</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>This are the directories/files found with brute force:
+
+http://192.168.1.7:2869/
+
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="00fe44c9-da54-42d1-9b79-fe749ebb3623">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>icslap (2869/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.10330">
+                        <name>Services</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>A web server is running on this port
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="25adedde-566d-4cdd-ba49-00f948070c0f">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>icslap (2869/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.80110">
+                        <name>wapiti (NASL wrapper)</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>wapiti report filename is empty. that could mean that
+wrong version of wapiti is used or tmp dir is not accessible.
+Make sure to have wapiti 2.x as wapiti 1.x is not supported.
+In short: check installation of wapiti and OpenVAS
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="dd874166-d037-401e-aa65-b4d154665c52">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>microsoft-ds (445/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.102011">
+                        <name>SMB NativeLanMan</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>
+Overview:
+It is possible to extract OS, domain and SMB server information
+from the Session Setup AndX Response packet which is generated
+during NTLM authentication.
+Detected SMB workgroup: WORKGROUP
+Detected SMB server: Windows 2000 LAN Manager
+Detected OS: Windows 5.1
+
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="f252c36d-dbd6-4246-838e-8bbf8e2797c0">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>microsoft-ds (445/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.11011">
+                        <name>SMB on port 445</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>A CIFS server is running on this port
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="c7a246ac-c779-47cf-acef-9f2857b596a1">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>netbios-ns (137/udp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.10150">
+                        <name>Using NetBIOS to retrieve information from a Windows host</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>The following 4 NetBIOS names have been gathered :
+ MS-999771C176C8 = This is the computer name registered for workstation services by a WINS client.
+ MS-999771C176C8 = Computer name
+ WORKGROUP       = Workgroup / Domain name
+ WORKGROUP       = Workgroup / Domain name (part of the Browser elections)
+The remote host has the following MAC address on its adapter :
+   08:00:27:40:1d:e5
+
+If you do not want to allow everyone to find the NetBios name
+of your computer, you should filter incoming traffic to this port.
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+                <result id="400ea9e2-f273-4aca-8f2e-ea13f1e2a3f2">
+                    <subnet>192.168.1.7</subnet>
+                    <host>192.168.1.7</host>
+                    <port>netbios-ssn (139/tcp)</port>
+                    <nvt oid="1.3.6.1.4.1.25623.1.0.11011">
+                        <name>SMB on port 445</name>
+                        <cvss_base>0.0</cvss_base>
+                        <risk_factor>None</risk_factor>
+                        <cve>NOCVE</cve>
+                        <bid>NOBID</bid>
+                        <xref>NOXREF</xref>
+                    </nvt>
+                    <threat>Log</threat>
+                    <description>An SMB server is running on this port
+</description>
+                    <original_threat>Log</original_threat>
+                    <notes/>
+                    <overrides/>
+                </result>
+            </results>
+            <result_count>33<full>33</full>
+                <filtered>29</filtered>
+                <debug>
+                    <full>0</full>
+                    <filtered>0</filtered>
+                </debug>
+                <hole>
+                    <full>2</full>
+                    <filtered>2</filtered>
+                </hole>
+                <info>
+                    <full>9</full>
+                    <filtered>9</filtered>
+                </info>
+                <log>
+                    <full>22</full>
+                    <filtered>18</filtered>
+                </log>
+                <warning>
+                    <full>0</full>
+                    <filtered>0</filtered>
+                </warning>
+                <false_positive>
+                    <full>0</full>
+                    <filtered>0</filtered>
+                </false_positive>
+            </result_count>
+            <host>
+                <ip>192.168.1.7</ip>
+                <start>2013-04-23T18:37:47Z</start>
+                <end>2013-04-23T18:44:46Z</end>
+                <detail>
+                    <name>traceroute</name>
+                    <value>192.168.1.9,192.168.1.7</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.51662</name>
+                        <description>Traceroute</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>OS</name>
+                    <value>Windows 5.1</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.102011</name>
+                        <description>Extracts info about the OS through NTLM authentication packets</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>OS</name>
+                    <value>cpe:/o:microsoft:windows</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.102011</name>
+                        <description>Extracts info about the OS through NTLM authentication packets</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>ports</name>
+                    <value>445,2869,135,139</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.900239</name>
+                        <description>Check Open TCP Ports</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>tcp_ports</name>
+                    <value>445,2869,135,139</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.900239</name>
+                        <description>Check Open TCP Ports</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>OS</name>
+                    <value>Microsoft Windows</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.102002</name>
+                        <description>Detects remote operating system version</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>OS</name>
+                    <value>cpe:/o:microsoft:windows</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.102002</name>
+                        <description>Detects remote operating system version</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>MAC</name>
+                    <value>08:00:27:40:1d:e5</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.10150</name>
+                        <description>Using NetBIOS to retrieve information from a Windows host</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>MAC</name>
+                    <value>08:00:27:40:1D:E5</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.103585</name>
+                        <description>Nmap MAC Scan</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>best_os_cpe</name>
+                    <value>cpe:/o:microsoft:windows</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.102011</name>
+                        <description>Extracts info about the OS through NTLM authentication packets</description>
+                    </source>
+                </detail>
+                <detail>
+                    <name>best_os_txt</name>
+                    <value>Windows 5.1</value>
+                    <source>
+                        <type>nvt</type>
+                        <name>1.3.6.1.4.1.25623.1.0.102011</name>
+                        <description>Extracts info about the OS through NTLM authentication packets</description>
+                    </source>
+                </detail>
+            </host>
+            <host_start>2013-04-23T18:37:47Z<host>192.168.1.7</host>
+            </host_start>
+            <host_end>2013-04-23T18:44:46Z<host>192.168.1.7</host>
+            </host_end>
+            <scan_end>2013-04-23T18:44:47Z</scan_end>
+        </report>
+    </report>
